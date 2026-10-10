@@ -16,7 +16,6 @@ const NAV = [
   { key: 'gallery', label: 'Gallery' },
   { key: 'blog', label: 'Journal' },
   { key: 'contact', label: 'Contact' },
-  { key: 'premium', label: 'Premium' },
 ]
 
 export default function Navbar({ route, go }) {
@@ -63,9 +62,20 @@ export default function Navbar({ route, go }) {
           ))}
         </nav>
 
-        <Button onClick={() => nav('contact')} className="hidden rounded-full px-3 text-xs lg:inline-flex 2xl:px-5 2xl:text-sm">
-          Let’s Work Together <span aria-hidden="true" className="ml-1">→</span>
-        </Button>
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button
+            onClick={() => nav('premium')}
+            className="rounded-full border border-cream/20 bg-cream/15 px-3 text-xs text-cream shadow-none backdrop-blur-sm transition-all hover:bg-cream/25 hover:text-cream 2xl:px-5 2xl:text-sm"
+          >
+            Premium
+          </Button>
+          <Button
+            onClick={() => nav('contact')}
+            className="rounded-full border border-cream/20 bg-cream/15 px-3 text-xs text-cream shadow-none backdrop-blur-sm transition-all hover:bg-cream/25 hover:text-cream 2xl:px-5 2xl:text-sm"
+          >
+            Let’s Work Together
+          </Button>
+        </div>
 
         {/* Mobile */}
         <div className="lg:hidden">
@@ -90,8 +100,14 @@ export default function Navbar({ route, go }) {
                     {item.label}
                   </button>
                 ))}
-                <Button onClick={() => nav('contact')} className="mt-3 rounded-full">
-                  Let’s Work Together <span aria-hidden="true" className="ml-1">→</span>
+                <Button onClick={() => nav('contact')} className="mt-3 rounded-full border border-border bg-secondary/50 shadow-none transition-colors hover:bg-secondary">
+                  Let’s Work Together
+                </Button>
+                <Button
+                  onClick={() => nav('premium')}
+                  className="rounded-full border border-blush/60 bg-blush/40 text-charcoal shadow-none backdrop-blur-sm transition-colors hover:bg-blush/60"
+                >
+                  Premium
                 </Button>
               </div>
             </SheetContent>
