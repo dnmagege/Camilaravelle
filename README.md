@@ -52,6 +52,7 @@ cp .env.example .env
 ```env
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 NEXT_PUBLIC_CAMILA_NAME="Camila Ravelle"
+NEXT_PUBLIC_FANVUE_URL="https://fanvue.com/cravelle"
 NEXT_PUBLIC_CONTACT_EMAIL="hello@camilarevelle.com"
 CONTACT_TO_EMAIL="hello@camilarevelle.com"
 RESEND_API_KEY="re_your_api_key"
@@ -75,7 +76,7 @@ The image source of truth for public editorial photos is `private-media/camila-r
 
 Every supported image placed in `categories/private-review/` is instead transformed into a small, permanently blurred WebP teaser for the Premium page. Only those blurred derivatives are written to `public/camila/premium-preview/`; full-resolution originals stay in the git-ignored archive and are never copied into `public/`. Generated public images and blurred teasers are deployment assets, so builds can use them when the private archive is unavailable.
 
-The Premium page is informational: blurred previews are not clickable, and the site does not link directly to the external premium profile. Contact includes a Name, Email, Subject, and Message form plus a prefilled direct-email fallback. To send form submissions, configure Resend with `RESEND_API_KEY` and an `EMAIL_FROM` address on a verified domain; without it, visitors can still use the direct email option. Add carousel images to `hero/`, public editorial images to a category source folder other than `private-review/`, and exclusive images only to `categories/private-review/`.
+The Premium page includes a direct link to Camila’s Fanvue profile (`NEXT_PUBLIC_FANVUE_URL`) and permanently blurred, non-clickable image previews. Contact includes a Name, Email, Subject, and Message form plus a prefilled direct-email fallback. To send form submissions, configure Resend with `RESEND_API_KEY` and an `EMAIL_FROM` address on a verified domain; without it, visitors can still use the direct email option. Add carousel images to `hero/`, public editorial images to a category source folder other than `private-review/`, and exclusive images only to `categories/private-review/`.
 
 ## Production Checks
 ```bash

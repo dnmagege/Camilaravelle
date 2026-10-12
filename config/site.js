@@ -8,6 +8,7 @@ export const site = {
   description:
     'A fictional AI creator sharing everyday moments, fashion, fitness and travel experiences.',
   domain: 'camilaravelle.com',
+  fanvueUrl: process.env.NEXT_PUBLIC_FANVUE_URL || 'https://fanvue.com/cravelle',
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@camilarevelle.com',
   social: {
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://www.instagram.com/camila.ravelle/',

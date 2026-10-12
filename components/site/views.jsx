@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import {
-  ArrowRight, ArrowLeft, Check, Search, ShoppingBag, Trash2,
+  ArrowRight, ArrowLeft, ExternalLink, Check, Search, ShoppingBag, Trash2,
   Sparkles, Heart, Bell, Star, Calendar, Clock,
   Plane, Dumbbell, Camera, Share2, Tag, Mail,
 } from 'lucide-react'
@@ -68,7 +68,7 @@ export function HomeView({ go }) {
     <>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden bg-charcoal">
-        <motion.img key={activeHero.src} src={activeHero.src} alt={activeHero.alt} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="absolute inset-0 h-full w-full object-cover object-top" />
+        <motion.img key={activeHero.src} src={activeHero.src} alt={activeHero.alt} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="absolute inset-0 h-full w-full object-cover object-[65%_top] sm:object-top" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/75 via-charcoal/40 to-transparent" />
         <Container className="relative z-10 py-32 text-cream">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="max-w-2xl">
@@ -488,8 +488,12 @@ export function PremiumView() {
         <Reveal className="mt-16">
           <div className="relative overflow-hidden rounded-3xl bg-charcoal px-8 py-16 text-center text-cream md:py-20">
             <h2 className="mx-auto max-w-2xl text-3xl md:text-5xl font-medium leading-tight">A more personal side of Camila</h2>
-            <p className="mx-auto mt-4 max-w-lg text-cream/80">The premium community is hosted separately. This website uses public category images and never serves Private Review originals.</p>
-            <p className="mx-auto mt-5 max-w-lg text-sm text-cream/70">Premium content is hosted on a separate platform. This site provides editorial information and previews only.</p>
+            <p className="mx-auto mt-4 max-w-lg text-cream/80">Join Camila’s premium community on Fanvue for exclusive content.</p>
+            <Button asChild size="lg" className="mt-6 rounded-full px-8">
+              <a href={site.fanvueUrl} target="_blank" rel="noopener noreferrer">
+                Visit Camila on Fanvue <ExternalLink aria-hidden="true" className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </Reveal>
       </Section>

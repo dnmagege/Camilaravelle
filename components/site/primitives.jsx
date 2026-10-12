@@ -50,7 +50,8 @@ export function SmartImage({ src, alt, className, imgClassName }) {
         src={src}
         alt={alt || ''}
         loading="lazy"
-        className={cn('h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform', imgClassName)}
+        decoding="async"
+        className={cn('block h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform', imgClassName)}
       />
     </div>
   )
@@ -190,4 +191,3 @@ export function ProductCard({ product, index = 0, onOpen, onAdd }) {
     </Reveal>
   )
 }
-
